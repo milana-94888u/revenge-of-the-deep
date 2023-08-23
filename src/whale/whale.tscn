@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://dya0egt7juqx3"]
+
+[ext_resource type="Texture2D" uid="uid://bw8takgqipyv3" path="res://assets/whale/blue-whale.png" id="1_gh72i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mda8"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbuan"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6muo"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd4yr"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvnnr"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn63i"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8thq"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk2bh"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxtxk"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcl7k"]
+atlas = ExtResource("1_gh72i")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6iue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mda8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbuan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6muo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd4yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvnnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn63i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8thq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk2bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxtxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcl7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkmty"]
+radius = 19.0
+height = 70.0
+
+[node name="Whale" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s6iue")
+frame_progress = 0.430745
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kkmty")
