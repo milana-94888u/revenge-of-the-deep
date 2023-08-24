@@ -40,6 +40,7 @@ func adjust_rotation() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	InputEventAction.new()
 	if input_direction:
 		accelerate(input_direction.normalized(), delta * physics_frames)
 	else:
@@ -67,3 +68,4 @@ func set_input_direction_strenght(event: InputEvent, action: StringName) -> void
 func _unhandled_input(event: InputEvent) -> void:
 	for action in action_to_direction:
 		set_input_direction_strenght(event, action)
+
