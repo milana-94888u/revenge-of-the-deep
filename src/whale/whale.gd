@@ -4,9 +4,9 @@ extends CharacterBody2D
 @onready var physics_frames := ProjectSettings.get_setting("physics/common/physics_ticks_per_second") as float
 
 
-@export var speed := 400.0
-@export var acceleration := 40.0
-@export var friction := 60.0
+@export var speed := 200.0
+@export var acceleration := 10.0
+@export var friction := 15.0
 
 
 @onready var sprite := $AnimatedSprite2D
