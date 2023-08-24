@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcp81oo8fqj2t"]
+
+[ext_resource type="Texture2D" uid="uid://dfjplg1h0bgys" path="res://assets/background/layers/far.png" id="1_fmutl"]
+[ext_resource type="Script" path="res://test_parallax.gd" id="1_wfrkw"]
+[ext_resource type="PackedScene" uid="uid://dya0egt7juqx3" path="res://src/whale/whale.tscn" id="2_6kku6"]
+
+[node name="TestParallax" type="Node2D"]
+script = ExtResource("1_wfrkw")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(1, 0.2)
+motion_offset = Vector2(0, 324)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Far" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(4.5, 3.375)
+texture = ExtResource("1_fmutl")
+
+[node name="Whale" parent="." instance=ExtResource("2_6kku6")]
+position = Vector2(571, 316)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 440.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 60

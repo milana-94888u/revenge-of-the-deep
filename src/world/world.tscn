@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg0dmwxqqnjh2"]
+[gd_scene load_steps=9 format=3 uid="uid://dg0dmwxqqnjh2"]
 
 [ext_resource type="Texture2D" uid="uid://bngvqwqh6gaq" path="res://assets/tiles/water.png" id="1_b6be4"]
+[ext_resource type="Texture2D" uid="uid://dfjplg1h0bgys" path="res://assets/background/layers/far.png" id="1_qdo55"]
 [ext_resource type="PackedScene" uid="uid://dya0egt7juqx3" path="res://src/whale/whale.tscn" id="2_wfaic"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rlc6v"]
@@ -118,6 +119,17 @@ sources/0 = SubResource("TileSetAtlasSource_2w48e")
 [node name="World" type="Node2D"]
 texture_filter = 1
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Far" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+
+[node name="Far" type="Sprite2D" parent="ParallaxBackground/Far"]
+position = Vector2(0, 2)
+scale = Vector2(18, 6)
+texture = ExtResource("1_qdo55")
+centered = false
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xmf07")
 format = 2
@@ -142,4 +154,4 @@ color = Color(0.332841, 0.257437, 0.40861, 1)
 
 [node name="Whale" parent="." instance=ExtResource("2_wfaic")]
 z_index = -100
-position = Vector2(574, 110)
+position = Vector2(2507, 788)
