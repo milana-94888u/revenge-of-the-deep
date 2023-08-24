@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg0dmwxqqnjh2"]
+[gd_scene load_steps=10 format=3 uid="uid://dg0dmwxqqnjh2"]
 
 [ext_resource type="Texture2D" uid="uid://bngvqwqh6gaq" path="res://assets/tiles/water.png" id="1_b6be4"]
 [ext_resource type="Texture2D" uid="uid://dfjplg1h0bgys" path="res://assets/background/layers/far.png" id="1_qdo55"]
+[ext_resource type="Texture2D" uid="uid://djobq2fm5l7p5" path="res://assets/background/layers/foregound-merged.png" id="2_dgmhj"]
 [ext_resource type="PackedScene" uid="uid://dya0egt7juqx3" path="res://src/whale/whale.tscn" id="2_wfaic"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rlc6v"]
@@ -123,11 +124,26 @@ texture_filter = 1
 
 [node name="Far" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
+motion_scale = Vector2(0.2, 0.4)
+motion_offset = Vector2(0, 64.8)
+motion_mirroring = Vector2(1152, 0)
 
 [node name="Far" type="Sprite2D" parent="ParallaxBackground/Far"]
-position = Vector2(0, 2)
-scale = Vector2(18, 6)
+position = Vector2(0, -64)
+scale = Vector2(4.5, 3.375)
 texture = ExtResource("1_qdo55")
+centered = false
+
+[node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.8, 0.4)
+motion_offset = Vector2(0, 64.8)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Foregound" type="Sprite2D" parent="ParallaxBackground/Foreground"]
+position = Vector2(0, -64)
+scale = Vector2(2.25, 3.375)
+texture = ExtResource("2_dgmhj")
 centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -154,4 +170,4 @@ color = Color(0.332841, 0.257437, 0.40861, 1)
 
 [node name="Whale" parent="." instance=ExtResource("2_wfaic")]
 z_index = -100
-position = Vector2(2507, 788)
+position = Vector2(500, 0)

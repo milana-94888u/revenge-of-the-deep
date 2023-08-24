@@ -12,7 +12,7 @@ script = ExtResource("1_wfrkw")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
 motion_scale = Vector2(1, 0.2)
-motion_offset = Vector2(0, 324)
+motion_offset = Vector2(0, 64.8)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Far" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
@@ -21,7 +21,6 @@ scale = Vector2(4.5, 3.375)
 texture = ExtResource("1_fmutl")
 
 [node name="Whale" parent="." instance=ExtResource("2_6kku6")]
-position = Vector2(571, 316)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
