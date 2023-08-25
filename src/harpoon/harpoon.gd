@@ -16,6 +16,8 @@ enum MoveMode {KEEP, EXTEND, RETRACT}
 var move_mode := MoveMode.KEEP
 var direction := Vector2.DOWN
 
+var captured_whale: Whale
+
 
 @onready var rope_line := $RopeLine as Line2D
 @onready var head := $HeadArea as Area2D
@@ -28,6 +30,8 @@ func get_rope_vector() -> Vector2:
 func set_head_position(pos: Vector2) -> void:
 	rope_line.points[1] = pos
 	head.position = pos
+	if captured_whale:
+		captured_whale.global_position = head.global_position
 
 
 func launch(launch_direction: Vector2) -> void:
@@ -50,6 +54,8 @@ func retract(change: Vector2) -> void:
 	if get_rope_vector().length() < length * 0.1:
 		set_head_position(Vector2.ZERO)
 		move_mode = MoveMode.KEEP
+		if captured_whale:
+			captured_whale.die()
 		returned.emit()
 
 
@@ -59,9 +65,11 @@ func _physics_process(delta: float) -> void:
 		MoveMode.EXTEND:
 			extend(frame_change)
 		MoveMode.RETRACT:
-			retract(frame_change)
+			retract(0.3 * frame_change if captured_whale else frame_change)
 
 
 func _on_head_area_body_entered(body: Node2D) -> void:
 	if body is Whale:
-		body
+		body.capture(global_position.x)
+		captured_whale = body
+		move_mode = MoveMode.RETRACT

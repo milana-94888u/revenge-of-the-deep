@@ -2,6 +2,9 @@ extends CharacterBody2D
 class_name Whale
 
 
+signal captured
+
+
 @export var speed := 200.0
 @export var acceleration := 10.0
 @export var friction := 15.0
@@ -68,11 +71,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		set_input_direction_strenght(event, action)
 
 
+func capture(harpoon_x_position: float) -> void:
+	if global_position.x > harpoon_x_position:
+		skew = 0.25 * PI
+	else:
+		skew = -0.25 * PI
+	set_process(false)
+	set_process_unhandled_input(false)
+	$CollisionShape2D.set_deferred("disabled", true)
+
+
 func die() -> void:
-	skew = PI * 0.25
-
-
-
+	get_tree().reload_current_scene()
 
 
 
