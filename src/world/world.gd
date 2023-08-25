@@ -6,3 +6,7 @@ func _process(_delta: float) -> void:
 	if has_node("Whale"):
 		depth = clampf($Whale.position.y, 0.0, 928.0) / 928.0
 	$DirectionalLight2D.energy = (1 - depth) * 2.0
+
+
+func _on_whale_dead() -> void:
+	get_tree().reload_current_scene()

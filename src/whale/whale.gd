@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Whale
 
 
-signal captured
+signal dead
 
 
 @export var speed := 200.0
@@ -82,7 +82,7 @@ func capture(harpoon_x_position: float) -> void:
 
 
 func die() -> void:
-	get_tree().reload_current_scene()
+	dead.emit()
 
 
 
