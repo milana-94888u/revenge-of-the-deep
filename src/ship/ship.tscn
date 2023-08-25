@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://sg1awmxnd4x5"]
+
+[ext_resource type="Texture2D" uid="uid://chh5s6oto3qxx" path="res://assets/ship/ship_full.png" id="1_mxkm1"]
+[ext_resource type="Texture2D" uid="uid://c77kvisssyumx" path="res://assets/ship/ship_particles.png" id="2_2m1jq"]
+[ext_resource type="Script" path="res://src/ship/ship.gd" id="2_8wga2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lsxgu"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 4
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q4yke"]
+emission_shape = 3
+emission_box_extents = Vector3(66, 59, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 60.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angular_velocity_min = -60.0
+angular_velocity_max = 75.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+anim_offset_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ith0v"]
+size = Vector2(192, 128)
+
+[node name="Ship" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_mxkm1")
+script = ExtResource("2_8wga2")
+
+[node name="DestroyParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_lsxgu")
+scale = Vector2(1.5, 1.5)
+emitting = false
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_q4yke")
+texture = ExtResource("2_2m1jq")
+one_shot = true
+explosiveness = 1.0
+
+[node name="Line2D" type="Line2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_ith0v")
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

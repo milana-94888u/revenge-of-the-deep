@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Whale
 
 
 @onready var physics_frames := ProjectSettings.get_setting("physics/common/physics_ticks_per_second") as float

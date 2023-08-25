@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://dg0dmwxqqnjh2"]
+[gd_scene load_steps=16 format=3 uid="uid://dg0dmwxqqnjh2"]
 
 [ext_resource type="Script" path="res://src/world/world.gd" id="1_aautu"]
 [ext_resource type="Texture2D" uid="uid://bngvqwqh6gaq" path="res://assets/tiles/water.png" id="1_b6be4"]
 [ext_resource type="Texture2D" uid="uid://dfjplg1h0bgys" path="res://assets/background/layers/far.png" id="1_qdo55"]
 [ext_resource type="Texture2D" uid="uid://djobq2fm5l7p5" path="res://assets/background/layers/foregound-merged.png" id="2_dgmhj"]
 [ext_resource type="PackedScene" uid="uid://dya0egt7juqx3" path="res://src/whale/whale.tscn" id="2_wfaic"]
+[ext_resource type="Script" path="res://src/world/ShipPathFollow.gd" id="6_oawcq"]
+[ext_resource type="PackedScene" uid="uid://sg1awmxnd4x5" path="res://src/ship/ship.tscn" id="6_q7bx0"]
+[ext_resource type="Shader" path="res://src/world/vignetting.gdshader" id="8_qsku4"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rlc6v"]
 polygon = PackedVector2Array(-8, 16, 16, -8, 16, 16)
@@ -118,17 +121,14 @@ terrain_set_1/terrain_0/name = "ground"
 terrain_set_1/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_2w48e")
 
-[sub_resource type="Gradient" id="Gradient_l2eno"]
-colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 0.752941)
+[sub_resource type="Curve2D" id="Curve2D_5kqrm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 195, -20, 0, 0, 0, 0, 4466, -20)
+}
+point_count = 2
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1c7ag"]
-gradient = SubResource("Gradient_l2eno")
-width = 1152
-height = 648
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.9, 0.2)
-metadata/_snap_enabled = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6lox"]
+shader = ExtResource("8_qsku4")
 
 [node name="World" type="Node2D"]
 texture_filter = 1
@@ -180,18 +180,29 @@ energy = 2.0
 shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.333333, 0.258824, 0.407843, 1)
+color = Color(0.447059, 0.352941, 0.537255, 1)
 
 [node name="Whale" parent="." instance=ExtResource("2_wfaic")]
 z_index = -100
 position = Vector2(1236, 155)
 
+[node name="ShipPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5kqrm")
+
+[node name="ShipPathFollow" type="PathFollow2D" parent="ShipPath"]
+position = Vector2(195, -20)
+rotates = false
+script = ExtResource("6_oawcq")
+
+[node name="Ship" parent="ShipPath/ShipPathFollow" instance=ExtResource("6_q7bx0")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = -345.6
-offset_top = -194.4
-offset_right = 806.4
-offset_bottom = 453.6
-scale = Vector2(1.6, 1.6)
-texture = SubResource("GradientTexture2D_1c7ag")
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_k6lox")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
