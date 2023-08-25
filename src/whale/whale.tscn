@@ -86,7 +86,6 @@ radius = 19.0
 height = 70.0
 
 [node name="Whale" type="CharacterBody2D"]
-texture_filter = 1
 script = ExtResource("1_oi7cb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

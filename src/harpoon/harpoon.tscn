@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://sa65o84q4iw4"]
+
+[ext_resource type="Texture2D" uid="uid://b8gykghew4q38" path="res://assets/harpoon/rope_fragment.png" id="1_d771j"]
+[ext_resource type="Script" path="res://src/harpoon/harpoon.gd" id="1_hii4b"]
+[ext_resource type="Texture2D" uid="uid://fop0emx8yuyy" path="res://assets/harpoon/harpoon_head.png" id="2_0ib5x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tovwf"]
+radius = 14.0357
+
+[node name="Harpoon" type="Node2D"]
+script = ExtResource("1_hii4b")
+
+[node name="RopeLine" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
+texture = ExtResource("1_d771j")
+texture_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="HeadArea" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="HarpoonHead" type="Sprite2D" parent="HeadArea"]
+texture = ExtResource("2_0ib5x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadArea"]
+shape = SubResource("CircleShape2D_tovwf")
+
+[connection signal="body_entered" from="HeadArea" to="." method="_on_head_area_body_entered"]

@@ -2,9 +2,6 @@ extends CharacterBody2D
 class_name Whale
 
 
-@onready var physics_frames := ProjectSettings.get_setting("physics/common/physics_ticks_per_second") as float
-
-
 @export var speed := 200.0
 @export var acceleration := 10.0
 @export var friction := 15.0
@@ -43,9 +40,9 @@ func adjust_rotation() -> void:
 func _physics_process(delta: float) -> void:
 	InputEventAction.new()
 	if input_direction:
-		accelerate(input_direction.normalized(), delta * physics_frames)
+		accelerate(input_direction.normalized(), delta * 60.0)
 	else:
-		add_friction(delta * physics_frames)
+		add_friction(delta * 60.0)
 	adjust_rotation()
 	move_and_slide()
 
@@ -69,4 +66,14 @@ func set_input_direction_strenght(event: InputEvent, action: StringName) -> void
 func _unhandled_input(event: InputEvent) -> void:
 	for action in action_to_direction:
 		set_input_direction_strenght(event, action)
+
+
+func die() -> void:
+	skew = PI * 0.25
+
+
+
+
+
+
 

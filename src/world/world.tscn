@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dg0dmwxqqnjh2"]
+[gd_scene load_steps=15 format=3 uid="uid://dg0dmwxqqnjh2"]
 
 [ext_resource type="Script" path="res://src/world/world.gd" id="1_aautu"]
 [ext_resource type="Texture2D" uid="uid://bngvqwqh6gaq" path="res://assets/tiles/water.png" id="1_b6be4"]
 [ext_resource type="Texture2D" uid="uid://dfjplg1h0bgys" path="res://assets/background/layers/far.png" id="1_qdo55"]
 [ext_resource type="Texture2D" uid="uid://djobq2fm5l7p5" path="res://assets/background/layers/foregound-merged.png" id="2_dgmhj"]
 [ext_resource type="PackedScene" uid="uid://dya0egt7juqx3" path="res://src/whale/whale.tscn" id="2_wfaic"]
-[ext_resource type="Script" path="res://src/world/ShipPathFollow.gd" id="6_oawcq"]
 [ext_resource type="PackedScene" uid="uid://sg1awmxnd4x5" path="res://src/ship/ship.tscn" id="6_q7bx0"]
 [ext_resource type="Shader" path="res://src/world/vignetting.gdshader" id="8_qsku4"]
 
@@ -131,13 +130,11 @@ point_count = 2
 shader = ExtResource("8_qsku4")
 
 [node name="World" type="Node2D"]
-texture_filter = 1
 script = ExtResource("1_aautu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Far" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
 motion_scale = Vector2(0.2, 0.4)
 motion_offset = Vector2(0, 64.8)
 motion_mirroring = Vector2(1152, 0)
@@ -149,7 +146,6 @@ texture = ExtResource("1_qdo55")
 centered = false
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
 motion_scale = Vector2(0.8, 0.4)
 motion_offset = Vector2(0, 64.8)
 motion_mirroring = Vector2(1152, 0)
@@ -184,17 +180,15 @@ color = Color(0.447059, 0.352941, 0.537255, 1)
 
 [node name="Whale" parent="." instance=ExtResource("2_wfaic")]
 z_index = -100
-position = Vector2(1236, 155)
+position = Vector2(742, 71)
 
 [node name="ShipPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_5kqrm")
+metadata/_edit_lock_ = true
 
-[node name="ShipPathFollow" type="PathFollow2D" parent="ShipPath"]
+[node name="Ship" parent="ShipPath" instance=ExtResource("6_q7bx0")]
 position = Vector2(195, -20)
-rotates = false
-script = ExtResource("6_oawcq")
-
-[node name="Ship" parent="ShipPath/ShipPathFollow" instance=ExtResource("6_q7bx0")]
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -206,3 +200,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true

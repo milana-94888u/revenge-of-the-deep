@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://sg1awmxnd4x5"]
+[gd_scene load_steps=8 format=3 uid="uid://sg1awmxnd4x5"]
 
+[ext_resource type="Script" path="res://src/ship/ship.gd" id="1_ds7yo"]
 [ext_resource type="Texture2D" uid="uid://chh5s6oto3qxx" path="res://assets/ship/ship_full.png" id="1_mxkm1"]
 [ext_resource type="Texture2D" uid="uid://c77kvisssyumx" path="res://assets/ship/ship_particles.png" id="2_2m1jq"]
-[ext_resource type="Script" path="res://src/ship/ship.gd" id="2_8wga2"]
+[ext_resource type="PackedScene" uid="uid://sa65o84q4iw4" path="res://src/harpoon/harpoon.tscn" id="4_qbp3t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lsxgu"]
 particles_animation = true
@@ -28,10 +29,12 @@ anim_offset_max = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ith0v"]
 size = Vector2(192, 128)
 
-[node name="Ship" type="Sprite2D"]
+[node name="Ship" type="PathFollow2D"]
+script = ExtResource("1_ds7yo")
+
+[node name="Ship" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_mxkm1")
-script = ExtResource("2_8wga2")
 
 [node name="DestroyParticles" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_lsxgu")
@@ -52,4 +55,9 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_ith0v")
 
+[node name="Harpoon" parent="." instance=ExtResource("4_qbp3t")]
+position = Vector2(8, 14)
+
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="launched" from="Harpoon" to="." method="_on_harpoon_launched"]
+[connection signal="returned" from="Harpoon" to="." method="_on_harpoon_returned"]
