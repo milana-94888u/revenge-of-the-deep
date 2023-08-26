@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://sg1awmxnd4x5"]
+[gd_scene load_steps=9 format=3 uid="uid://sg1awmxnd4x5"]
 
 [ext_resource type="Script" path="res://src/ship/ship.gd" id="1_ds7yo"]
 [ext_resource type="Texture2D" uid="uid://chh5s6oto3qxx" path="res://assets/ship/ship_full.png" id="1_mxkm1"]
@@ -29,6 +29,9 @@ anim_offset_max = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ith0v"]
 size = Vector2(192, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc737"]
+size = Vector2(140, 39)
+
 [node name="Ship" type="PathFollow2D"]
 script = ExtResource("1_ds7yo")
 
@@ -37,6 +40,7 @@ texture_filter = 1
 texture = ExtResource("1_mxkm1")
 
 [node name="DestroyParticles" type="GPUParticles2D" parent="."]
+process_mode = 3
 material = SubResource("CanvasItemMaterial_lsxgu")
 scale = Vector2(1.5, 1.5)
 emitting = false
@@ -55,9 +59,16 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(0, 64)
 shape = SubResource("RectangleShape2D_ith0v")
 
+[node name="DamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(1, 9.5)
+shape = SubResource("RectangleShape2D_wc737")
+
 [node name="Harpoon" parent="." instance=ExtResource("4_qbp3t")]
 position = Vector2(8, 14)
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
 [connection signal="launched" from="Harpoon" to="." method="_on_harpoon_launched"]
 [connection signal="returned" from="Harpoon" to="." method="_on_harpoon_returned"]

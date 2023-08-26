@@ -10,3 +10,7 @@ func _process(_delta: float) -> void:
 
 func _on_whale_dead() -> void:
 	get_tree().reload_current_scene()
+
+
+func _ready() -> void:
+	get_tree().paused = false

@@ -17,8 +17,7 @@ var rotation_axis := Vector2.RIGHT
 
 var growth_modifier := 1.0:
 	set(value):
-		if floori(value) >= 2: #floori(growth_modifier):
-			set_level(floori(value))
+		set_level(floori(value))
 		growth_modifier = value
 		scale = Vector2.ONE * clampf(value * 2.0 / 3.0, 1.0, 2.5)
 		$Camera2D.zoom = Vector2.ONE * clampf(5.0 - value, 2.0, 4.0)
@@ -145,3 +144,35 @@ func eat_krill(krill: Krill) -> void:
 		3:
 			growth_modifier += 0.02
 	krill.queue_free()
+
+
+func pause_game() -> void:
+	$UI/PauseMenu.show()
+	get_tree().paused = true
+
+
+func continue_game() -> void:
+	$UI/PauseMenu.hide()
+	get_tree().paused = false
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		if get_tree().paused:
+			continue_game()
+		else:
+			pause_game()
+
+
+func end_game() -> void:
+	$UI/PauseMenu.show()
+	$UI/PauseMenu/ContinueButton.hide()
+	get_tree().paused = true
+
+
+func _on_continue_button_pressed() -> void:
+	continue_game()
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().reload_current_scene()
