@@ -190,24 +190,8 @@ z_index = -100
 position = Vector2(195, -20)
 metadata/_edit_lock_ = true
 
-[node name="Whale" parent="." instance=ExtResource("2_wfaic")]
-z_index = -100
-position = Vector2(481, 47)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_k6lox")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
-
 [node name="Krill" type="Node2D" parent="."]
+z_index = -100
 
 [node name="FirstLevel" type="Node2D" parent="Krill"]
 
@@ -1105,5 +1089,22 @@ position = Vector2(2335, 742)
 
 [node name="Krill60" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
 position = Vector2(2433, 657)
+
+[node name="Whale" parent="." instance=ExtResource("2_wfaic")]
+z_index = -100
+position = Vector2(481, 47)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_k6lox")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [connection signal="dead" from="Whale" to="." method="_on_whale_dead"]

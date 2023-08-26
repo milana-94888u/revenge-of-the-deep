@@ -15,6 +15,12 @@ signal dead
 
 var rotation_axis := Vector2.RIGHT
 
+var growth_modifier := 1.0:
+	set(value):
+		growth_modifier = value
+		scale = Vector2.ONE * value
+		$Camera2D.zoom = Vector2.ONE * (5.0 - value)
+
 
 var action_to_direction := {
 	"ui_up": Vector2.UP,
@@ -86,5 +92,14 @@ func die() -> void:
 
 
 func eat_krill(krill: Krill) -> void:
-	pass
-
+	match krill.krill_level:
+		1:
+			if growth_modifier < 2.0:
+				growth_modifier += 0.01
+		2:
+			if growth_modifier < 3.0:
+				growth_modifier += 0.01
+		3:
+			if growth_modifier < 4.0:
+				growth_modifier += 0.02
+	krill.queue_free()
