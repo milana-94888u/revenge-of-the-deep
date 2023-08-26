@@ -5,7 +5,7 @@ class_name Whale
 signal dead
 
 
-@export var speed := 200.0
+@export var speed := 100.0
 @export var acceleration := 10.0
 @export var friction := 15.0
 
@@ -18,16 +18,21 @@ var rotation_axis := Vector2.RIGHT
 var growth_modifier := 1.0:
 	set(value):
 		growth_modifier = value
-		scale = Vector2.ONE * value * 2.0 / 3.0
-		$Camera2D.zoom = Vector2.ONE * (5.0 - value * 2.0 / 3.0)
+		scale = Vector2.ONE * clampf(value * 2.0 / 3.0, 1.0, 3.0)
+		$Camera2D.zoom = Vector2.ONE * (5.0 - value)
 
 
 var air := 100.0:
 	set(value):
+		if floori(value) > floori(air):
+			set_level(floori(value))
 		$UI/AirProgressBar.value = value
 		air = value
 		if value <= 0.0:
 			die()
+
+
+var breath_efficiency := 0.15
 
 
 var action_to_direction := {
@@ -55,6 +60,7 @@ func adjust_rotation() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	breath()
 	if input_direction:
 		accelerate(input_direction.normalized(), delta * 60.0)
@@ -80,16 +86,11 @@ func set_input_direction_strenght(event: InputEvent, action: StringName) -> void
 		input_direction -= direction
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	for action in action_to_direction:
-		set_input_direction_strenght(event, action)
-
-
 func breath() -> void:
 	if global_position.y < 32.0:
 		air = 100.0
 	else:
-		air -= 0.05
+		air -= 0.2
 
 
 func capture(harpoon_x_position: float) -> void:
@@ -106,15 +107,25 @@ func die() -> void:
 	dead.emit()
 
 
+func set_level(level: int) -> void:
+	match level:
+		1:
+			speed = 100.0
+			breath_efficiency = 0.15
+		2:
+			speed = 200.0
+			breath_efficiency = 0.1
+		3:
+			speed = 300.0
+			breath_efficiency = 0.05
+
+
 func eat_krill(krill: Krill) -> void:
 	match krill.krill_level:
 		1:
-			if growth_modifier < 2.0:
-				growth_modifier += 0.01
+			growth_modifier += 0.01
 		2:
-			if growth_modifier < 3.0:
-				growth_modifier += 0.01
+			growth_modifier += 0.01
 		3:
-			if growth_modifier < 4.0:
-				growth_modifier += 0.02
+			growth_modifier += 0.02
 	krill.queue_free()

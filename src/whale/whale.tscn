@@ -105,6 +105,8 @@ corner_radius_bottom_left = 5
 anti_aliasing = false
 
 [node name="Whale" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_oi7cb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
