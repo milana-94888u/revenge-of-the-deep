@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjh1v486rqxuq"]
+
+[ext_resource type="PackedScene" uid="uid://dho0tq658lcml" path="res://src/krill/krill.tscn" id="1_aij4v"]
+[ext_resource type="Texture2D" uid="uid://cfwfmw04dubgk" path="res://assets/whale/krill-2.png" id="2_k16qc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hm7lp"]
+resource_local_to_scene = true
+radius = 8.0
+
+[node name="Krill2" instance=ExtResource("1_aij4v")]
+krill_level = 2
+
+[node name="Krill" parent="." index="0"]
+texture = ExtResource("2_k16qc")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_hm7lp")

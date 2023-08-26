@@ -85,5 +85,6 @@ func die() -> void:
 	dead.emit()
 
 
-
+func eat_krill(krill: Krill) -> void:
+	pass
 
