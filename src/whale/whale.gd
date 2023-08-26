@@ -18,8 +18,8 @@ var rotation_axis := Vector2.RIGHT
 var growth_modifier := 1.0:
 	set(value):
 		growth_modifier = value
-		scale = Vector2.ONE * value
-		$Camera2D.zoom = Vector2.ONE * (5.0 - value)
+		scale = Vector2.ONE * value * 2.0 / 3.0
+		$Camera2D.zoom = Vector2.ONE * (5.0 - value * 2.0 / 3.0)
 
 
 var action_to_direction := {
@@ -47,7 +47,7 @@ func adjust_rotation() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	InputEventAction.new()
+	print(global_position.y)
 	if input_direction:
 		accelerate(input_direction.normalized(), delta * 60.0)
 	else:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dya0egt7juqx3"]
+[gd_scene load_steps=17 format=3 uid="uid://dya0egt7juqx3"]
 
 [ext_resource type="Texture2D" uid="uid://bw8takgqipyv3" path="res://assets/whale/blue-whale.png" id="1_gh72i"]
 [ext_resource type="Script" path="res://src/whale/whale.gd" id="1_oi7cb"]
+[ext_resource type="Shader" path="res://src/world/vignetting.gdshader" id="3_vt4dr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mda8"]
 atlas = ExtResource("1_gh72i")
@@ -85,6 +86,9 @@ animations = [{
 radius = 19.0
 height = 70.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_in1k8"]
+shader = ExtResource("3_vt4dr")
+
 [node name="Whale" type="CharacterBody2D"]
 script = ExtResource("1_oi7cb")
 
@@ -99,3 +103,16 @@ shape = SubResource("CapsuleShape2D_kkmty")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_in1k8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
