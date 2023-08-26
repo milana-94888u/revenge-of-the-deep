@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dya0egt7juqx3"]
+[gd_scene load_steps=20 format=3 uid="uid://dya0egt7juqx3"]
 
 [ext_resource type="Texture2D" uid="uid://bw8takgqipyv3" path="res://assets/whale/blue-whale.png" id="1_gh72i"]
 [ext_resource type="Script" path="res://src/whale/whale.gd" id="1_oi7cb"]
@@ -97,7 +97,16 @@ corner_radius_bottom_left = 5
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njduq"]
+resource_local_to_scene = true
 bg_color = Color(0.0941176, 0.619608, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm15u"]
+bg_color = Color(0.317647, 0.701961, 0.231373, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -144,3 +153,38 @@ theme_override_styles/background = SubResource("StyleBoxFlat_5lmmp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_njduq")
 value = 100.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="UI/AirProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Air"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelProgressBar" type="ProgressBar" parent="UI"]
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 288.0
+offset_bottom = 128.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_5lmmp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qm15u")
+max_value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="UI/LevelProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1

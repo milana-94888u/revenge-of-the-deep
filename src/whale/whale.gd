@@ -17,22 +17,23 @@ var rotation_axis := Vector2.RIGHT
 
 var growth_modifier := 1.0:
 	set(value):
+		if floori(value) >= 2: #floori(growth_modifier):
+			set_level(floori(value))
 		growth_modifier = value
-		scale = Vector2.ONE * clampf(value * 2.0 / 3.0, 1.0, 3.0)
-		$Camera2D.zoom = Vector2.ONE * (5.0 - value)
+		scale = Vector2.ONE * clampf(value * 2.0 / 3.0, 1.0, 2.5)
+		$Camera2D.zoom = Vector2.ONE * clampf(5.0 - value, 2.0, 4.0)
+		$UI/LevelProgressBar.value = value - 1.0
 
 
 var air := 100.0:
 	set(value):
-		if floori(value) > floori(air):
-			set_level(floori(value))
 		$UI/AirProgressBar.value = value
 		air = value
 		if value <= 0.0:
 			die()
 
 
-var breath_efficiency := 0.15
+var breath_efficiency := 0.07
 
 
 var action_to_direction := {
@@ -90,7 +91,7 @@ func breath() -> void:
 	if global_position.y < 32.0:
 		air = 100.0
 	else:
-		air -= 0.2
+		air -= breath_efficiency
 
 
 func capture(harpoon_x_position: float) -> void:
@@ -111,13 +112,28 @@ func set_level(level: int) -> void:
 	match level:
 		1:
 			speed = 100.0
-			breath_efficiency = 0.15
+			breath_efficiency = 0.07
+			$UI/LevelProgressBar.min_value = 0.0
+			$UI/LevelProgressBar.max_value = 1.0
+			$UI/LevelProgressBar/Label.text = "Level 1"
 		2:
 			speed = 200.0
-			breath_efficiency = 0.1
+			breath_efficiency = 0.05
+			$UI/LevelProgressBar.min_value = 1.0
+			$UI/LevelProgressBar.max_value = 2.0
+			$UI/LevelProgressBar/Label.text = "Level 2"
 		3:
 			speed = 300.0
-			breath_efficiency = 0.05
+			breath_efficiency = 0.03
+			$UI/LevelProgressBar.min_value = 2.0
+			$UI/LevelProgressBar.max_value = 3.0
+			$UI/LevelProgressBar/Label.text = "Level 3"
+		4:
+			speed = 400.0
+			breath_efficiency = 0.01
+			$UI/LevelProgressBar.min_value = 3.0
+			$UI/LevelProgressBar.max_value = 3.0
+			$UI/LevelProgressBar/Label.text = "Level 4"
 
 
 func eat_krill(krill: Krill) -> void:
