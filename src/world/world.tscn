@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dg0dmwxqqnjh2"]
+[gd_scene load_steps=18 format=3 uid="uid://dg0dmwxqqnjh2"]
 
 [ext_resource type="Script" path="res://src/world/world.gd" id="1_aautu"]
 [ext_resource type="Texture2D" uid="uid://bngvqwqh6gaq" path="res://assets/tiles/water.png" id="1_b6be4"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://djobq2fm5l7p5" path="res://assets/background/layers/foregound-merged.png" id="2_dgmhj"]
 [ext_resource type="PackedScene" uid="uid://dya0egt7juqx3" path="res://src/whale/whale.tscn" id="2_wfaic"]
 [ext_resource type="PackedScene" uid="uid://sg1awmxnd4x5" path="res://src/ship/ship.tscn" id="6_q7bx0"]
+[ext_resource type="PackedScene" uid="uid://dho0tq658lcml" path="res://src/krill/krill.tscn" id="8_p2u5p"]
 [ext_resource type="Shader" path="res://src/world/vignetting.gdshader" id="8_qsku4"]
+[ext_resource type="PackedScene" uid="uid://bjh1v486rqxuq" path="res://src/krill/krill_2.tscn" id="9_po2xk"]
+[ext_resource type="PackedScene" uid="uid://lmp45lw1p0mb" path="res://src/krill/krill_3.tscn" id="10_yvqum"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rlc6v"]
 polygon = PackedVector2Array(-8, 16, 16, -8, 16, 16)
@@ -203,5 +206,904 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
+
+[node name="Krill" type="Node2D" parent="."]
+
+[node name="FirstLevel" type="Node2D" parent="Krill"]
+
+[node name="Krill" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(414, 63)
+
+[node name="Krill2" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(654, 66)
+
+[node name="Krill3" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(562, 137)
+
+[node name="Krill4" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(705, 51)
+
+[node name="Krill5" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(554, 57)
+
+[node name="Krill6" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(822, 65)
+
+[node name="Krill7" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(785, 113)
+
+[node name="Krill8" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(873, 218)
+
+[node name="Krill9" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(265, 90)
+
+[node name="Krill10" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(889, 152)
+
+[node name="Krill11" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(913, 69)
+
+[node name="Krill12" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1095, 138)
+
+[node name="Krill13" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(928, 117)
+
+[node name="Krill14" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1032, 36)
+
+[node name="Krill15" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(989, 172)
+
+[node name="Krill16" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1108, 87)
+
+[node name="Krill17" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1074, 211)
+
+[node name="Krill18" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1235, 46)
+
+[node name="Krill19" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1299, 44)
+
+[node name="Krill20" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1297, 135)
+
+[node name="Krill21" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1334, 162)
+
+[node name="Krill22" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1358, 79)
+
+[node name="Krill23" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1356, 38)
+
+[node name="Krill24" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1373, 127)
+
+[node name="Krill25" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1477, 46)
+
+[node name="Krill26" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1434, 182)
+
+[node name="Krill27" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1553, 97)
+
+[node name="Krill28" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1519, 221)
+
+[node name="Krill29" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1680, 56)
+
+[node name="Krill30" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1727, 59)
+
+[node name="Krill31" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1790, 66)
+
+[node name="Krill32" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1788, 157)
+
+[node name="Krill33" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1825, 184)
+
+[node name="Krill34" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1849, 101)
+
+[node name="Krill35" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1847, 60)
+
+[node name="Krill36" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1864, 149)
+
+[node name="Krill37" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1968, 68)
+
+[node name="Krill38" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1925, 204)
+
+[node name="Krill39" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2044, 119)
+
+[node name="Krill40" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2010, 243)
+
+[node name="Krill41" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2171, 78)
+
+[node name="Krill42" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1635, 197)
+
+[node name="Krill43" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1672, 224)
+
+[node name="Krill44" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1696, 141)
+
+[node name="Krill45" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1711, 189)
+
+[node name="Krill46" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1797, 221)
+
+[node name="Krill47" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1934, 60)
+
+[node name="Krill48" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2079, 42)
+
+[node name="Krill49" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2123, 129)
+
+[node name="Krill50" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2094, 228)
+
+[node name="Krill51" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2206, 163)
+
+[node name="Krill52" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2193, 239)
+
+[node name="Krill53" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2227, 56)
+
+[node name="Krill54" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2303, 51)
+
+[node name="Krill55" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2261, 138)
+
+[node name="Krill56" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2324, 107)
+
+[node name="Krill57" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2330, 187)
+
+[node name="Krill58" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2269, 205)
+
+[node name="Krill59" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2344, 251)
+
+[node name="Krill60" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2414, 186)
+
+[node name="Krill61" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2380, 124)
+
+[node name="Krill62" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2395, 46)
+
+[node name="Krill63" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2481, 39)
+
+[node name="Krill64" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2481, 101)
+
+[node name="Krill65" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2519, 165)
+
+[node name="Krill66" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2473, 224)
+
+[node name="Krill67" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2555, 237)
+
+[node name="Krill68" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2590, 171)
+
+[node name="Krill69" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2697, 43)
+
+[node name="Krill70" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2655, 130)
+
+[node name="Krill71" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2718, 99)
+
+[node name="Krill72" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2724, 179)
+
+[node name="Krill73" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2663, 197)
+
+[node name="Krill74" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2738, 243)
+
+[node name="Krill75" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2808, 178)
+
+[node name="Krill76" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2988, 61)
+
+[node name="Krill77" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2789, 38)
+
+[node name="Krill78" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2875, 31)
+
+[node name="Krill79" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2875, 93)
+
+[node name="Krill80" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2913, 157)
+
+[node name="Krill81" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2867, 216)
+
+[node name="Krill82" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2949, 229)
+
+[node name="Krill83" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(2984, 163)
+
+[node name="Krill84" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3109, 54)
+
+[node name="Krill85" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3067, 141)
+
+[node name="Krill86" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3130, 110)
+
+[node name="Krill87" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3136, 190)
+
+[node name="Krill88" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3075, 208)
+
+[node name="Krill89" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3399, 79)
+
+[node name="Krill90" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3220, 189)
+
+[node name="Krill91" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3186, 127)
+
+[node name="Krill92" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3201, 49)
+
+[node name="Krill93" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3287, 42)
+
+[node name="Krill94" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3287, 104)
+
+[node name="Krill95" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3827, 59)
+
+[node name="Krill96" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3917, 47)
+
+[node name="Krill97" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3332, 171)
+
+[node name="Krill98" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3396, 174)
+
+[node name="Krill99" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3524, 53)
+
+[node name="Krill100" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3482, 140)
+
+[node name="Krill101" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3545, 109)
+
+[node name="Krill102" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3551, 189)
+
+[node name="Krill103" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3490, 207)
+
+[node name="Krill104" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3925, 146)
+
+[node name="Krill105" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3635, 188)
+
+[node name="Krill106" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3601, 126)
+
+[node name="Krill107" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3616, 48)
+
+[node name="Krill108" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3702, 41)
+
+[node name="Krill109" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3702, 103)
+
+[node name="Krill110" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3740, 167)
+
+[node name="Krill111" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(4024, 153)
+
+[node name="Krill112" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(4031, 52)
+
+[node name="Krill113" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3811, 173)
+
+[node name="Krill114" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(4073, 102)
+
+[node name="Krill115" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3898, 218)
+
+[node name="Krill116" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(3750, 232)
+
+[node name="Krill117" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1108, 87)
+
+[node name="Krill118" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(1208, 162)
+
+[node name="Krill119" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(666, 181)
+
+[node name="Krill120" parent="Krill/FirstLevel" instance=ExtResource("8_p2u5p")]
+position = Vector2(420, 147)
+
+[node name="SecondLevel" type="Node2D" parent="Krill"]
+
+[node name="Krill2" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(914, 312)
+
+[node name="Krill3" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(969, 301)
+
+[node name="Krill4" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(957, 349)
+
+[node name="Krill5" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1079, 306)
+
+[node name="Krill6" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1021, 350)
+
+[node name="Krill7" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1092, 371)
+
+[node name="Krill8" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1164, 302)
+
+[node name="Krill9" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1156, 388)
+
+[node name="Krill10" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1254, 303)
+
+[node name="Krill11" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1241, 368)
+
+[node name="Krill12" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1206, 437)
+
+[node name="Krill13" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1314, 474)
+
+[node name="Krill14" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1340, 373)
+
+[node name="Krill15" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1357, 296)
+
+[node name="Krill16" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1461, 304)
+
+[node name="Krill17" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1416, 386)
+
+[node name="Krill18" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1398, 463)
+
+[node name="Krill19" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1436, 525)
+
+[node name="Krill20" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1525, 535)
+
+[node name="Krill21" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1510, 456)
+
+[node name="Krill22" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1523, 388)
+
+[node name="Krill23" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1544, 308)
+
+[node name="Krill24" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1635, 309)
+
+[node name="Krill25" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1627, 378)
+
+[node name="Krill26" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1686, 441)
+
+[node name="Krill27" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1588, 433)
+
+[node name="Krill28" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1636, 518)
+
+[node name="Krill29" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1771, 521)
+
+[node name="Krill30" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1774, 360)
+
+[node name="Krill31" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1704, 297)
+
+[node name="Krill32" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1703, 364)
+
+[node name="Krill33" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1906, 307)
+
+[node name="Krill34" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1853, 386)
+
+[node name="Krill35" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1782, 445)
+
+[node name="Krill36" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1894, 519)
+
+[node name="Krill37" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1951, 540)
+
+[node name="Krill38" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1936, 461)
+
+[node name="Krill39" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1949, 393)
+
+[node name="Krill40" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1970, 313)
+
+[node name="Krill41" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2061, 314)
+
+[node name="Krill42" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2053, 383)
+
+[node name="Krill43" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2112, 446)
+
+[node name="Krill44" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2014, 438)
+
+[node name="Krill45" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2062, 523)
+
+[node name="Krill46" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2197, 526)
+
+[node name="Krill47" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2200, 365)
+
+[node name="Krill48" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2130, 302)
+
+[node name="Krill49" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2129, 369)
+
+[node name="Krill50" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2332, 312)
+
+[node name="Krill51" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2279, 391)
+
+[node name="Krill52" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2208, 450)
+
+[node name="Krill53" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2320, 524)
+
+[node name="Krill54" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2380, 556)
+
+[node name="Krill55" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2365, 477)
+
+[node name="Krill56" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2378, 409)
+
+[node name="Krill57" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2399, 329)
+
+[node name="Krill58" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2490, 330)
+
+[node name="Krill59" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2482, 399)
+
+[node name="Krill60" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2541, 462)
+
+[node name="Krill61" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2443, 454)
+
+[node name="Krill62" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2491, 539)
+
+[node name="Krill63" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2626, 542)
+
+[node name="Krill64" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2629, 381)
+
+[node name="Krill65" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2559, 318)
+
+[node name="Krill66" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2558, 385)
+
+[node name="Krill67" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2761, 328)
+
+[node name="Krill68" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2708, 407)
+
+[node name="Krill69" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2637, 466)
+
+[node name="Krill70" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2749, 540)
+
+[node name="Krill71" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2873, 312)
+
+[node name="Krill72" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2820, 391)
+
+[node name="Krill73" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2919, 409)
+
+[node name="Krill74" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2940, 329)
+
+[node name="Krill75" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3031, 330)
+
+[node name="Krill76" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3023, 399)
+
+[node name="Krill77" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3170, 381)
+
+[node name="Krill78" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3100, 318)
+
+[node name="Krill79" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2913, 453)
+
+[node name="Krill80" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3302, 328)
+
+[node name="Krill81" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3688, 325)
+
+[node name="Krill82" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3180, 327)
+
+[node name="Krill83" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3127, 406)
+
+[node name="Krill84" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3226, 424)
+
+[node name="Krill85" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3262, 388)
+
+[node name="Krill86" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3051, 462)
+
+[node name="Krill87" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3330, 414)
+
+[node name="Krill88" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3477, 396)
+
+[node name="Krill89" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3407, 333)
+
+[node name="Krill90" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3406, 400)
+
+[node name="Krill91" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3609, 343)
+
+[node name="Krill92" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3536, 324)
+
+[node name="Krill93" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2806, 485)
+
+[node name="Krill94" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2943, 504)
+
+[node name="Krill95" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(3016, 513)
+
+[node name="Krill96" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2970, 587)
+
+[node name="Krill97" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2900, 549)
+
+[node name="Krill98" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2816, 579)
+
+[node name="Krill99" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2551, 566)
+
+[node name="Krill100" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2427, 508)
+
+[node name="Krill101" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2287, 457)
+
+[node name="Krill102" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2272, 567)
+
+[node name="Krill103" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2114, 586)
+
+[node name="Krill104" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1874, 575)
+
+[node name="Krill105" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1666, 573)
+
+[node name="Krill106" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1564, 490)
+
+[node name="Krill107" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1324, 422)
+
+[node name="Krill108" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1134, 337)
+
+[node name="Krill109" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(844, 298)
+
+[node name="Krill110" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1820, 312)
+
+[node name="Krill111" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1850, 458)
+
+[node name="Krill112" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(1735, 402)
+
+[node name="Krill113" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2259, 310)
+
+[node name="Krill114" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2435, 573)
+
+[node name="Krill115" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2681, 586)
+
+[node name="Krill116" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2732, 458)
+
+[node name="Krill117" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2701, 511)
+
+[node name="Krill118" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2865, 496)
+
+[node name="Krill119" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2869, 358)
+
+[node name="Krill120" parent="Krill/SecondLevel" instance=ExtResource("9_po2xk")]
+position = Vector2(2672, 318)
+
+[node name="ThirdLevel" type="Node2D" parent="Krill"]
+
+[node name="Krill3" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(1943, 665)
+
+[node name="Krill4" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(1998, 646)
+
+[node name="Krill5" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(1989, 678)
+
+[node name="Krill6" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2067, 642)
+
+[node name="Krill7" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2051, 695)
+
+[node name="Krill8" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2138, 646)
+
+[node name="Krill9" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2110, 709)
+
+[node name="Krill10" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2198, 679)
+
+[node name="Krill11" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2178, 732)
+
+[node name="Krill12" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2233, 713)
+
+[node name="Krill13" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2224, 745)
+
+[node name="Krill14" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2302, 709)
+
+[node name="Krill15" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2093, 669)
+
+[node name="Krill16" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2373, 713)
+
+[node name="Krill17" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2362, 777)
+
+[node name="Krill18" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2433, 746)
+
+[node name="Krill19" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2247, 646)
+
+[node name="Krill20" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2521, 922)
+
+[node name="Krill21" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2293, 659)
+
+[node name="Krill22" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2478, 770)
+
+[node name="Krill23" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2362, 673)
+
+[node name="Krill24" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2423, 794)
+
+[node name="Krill25" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2431, 691)
+
+[node name="Krill26" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2502, 660)
+
+[node name="Krill27" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2330, 827)
+
+[node name="Krill28" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2312, 782)
+
+[node name="Krill29" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2376, 840)
+
+[node name="Krill30" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2467, 822)
+
+[node name="Krill31" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2437, 876)
+
+[node name="Krill32" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2525, 808)
+
+[node name="Krill33" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2514, 872)
+
+[node name="Krill34" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2585, 841)
+
+[node name="Krill35" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2475, 713)
+
+[node name="Krill36" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2559, 654)
+
+[node name="Krill37" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2521, 726)
+
+[node name="Krill38" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2694, 813)
+
+[node name="Krill39" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2572, 786)
+
+[node name="Krill40" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2629, 651)
+
+[node name="Krill41" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2591, 892)
+
+[node name="Krill42" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2655, 847)
+
+[node name="Krill43" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2570, 696)
+
+[node name="Krill44" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2640, 778)
+
+[node name="Krill45" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2619, 728)
+
+[node name="Krill46" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2694, 673)
+
+[node name="Krill47" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2685, 723)
+
+[node name="Krill48" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2765, 677)
+
+[node name="Krill49" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2722, 760)
+
+[node name="Krill50" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2775, 728)
+
+[node name="Krill51" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2838, 783)
+
+[node name="Krill52" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2799, 817)
+
+[node name="Krill53" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2744, 815)
+
+[node name="Krill54" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2838, 643)
+
+[node name="Krill55" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2829, 693)
+
+[node name="Krill56" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2909, 647)
+
+[node name="Krill57" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2898, 711)
+
+[node name="Krill58" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2838, 729)
+
+[node name="Krill59" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2335, 742)
+
+[node name="Krill60" parent="Krill/ThirdLevel" instance=ExtResource("10_yvqum")]
+position = Vector2(2433, 657)
 
 [connection signal="dead" from="Whale" to="." method="_on_whale_dead"]
