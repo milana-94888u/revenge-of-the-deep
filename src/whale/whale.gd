@@ -22,6 +22,14 @@ var growth_modifier := 1.0:
 		$Camera2D.zoom = Vector2.ONE * (5.0 - value * 2.0 / 3.0)
 
 
+var air := 100.0:
+	set(value):
+		$UI/AirProgressBar.value = value
+		air = value
+		if value <= 0.0:
+			die()
+
+
 var action_to_direction := {
 	"ui_up": Vector2.UP,
 	"ui_right": Vector2.RIGHT,
@@ -47,7 +55,7 @@ func adjust_rotation() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	print(global_position.y)
+	breath()
 	if input_direction:
 		accelerate(input_direction.normalized(), delta * 60.0)
 	else:
@@ -75,6 +83,13 @@ func set_input_direction_strenght(event: InputEvent, action: StringName) -> void
 func _unhandled_input(event: InputEvent) -> void:
 	for action in action_to_direction:
 		set_input_direction_strenght(event, action)
+
+
+func breath() -> void:
+	if global_position.y < 32.0:
+		air = 100.0
+	else:
+		air -= 0.05
 
 
 func capture(harpoon_x_position: float) -> void:
