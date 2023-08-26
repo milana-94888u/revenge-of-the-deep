@@ -35,4 +35,4 @@ func _on_damage_area_body_entered(body: Node2D) -> void:
 			call_deferred("remove_child", $AttackArea)
 			call_deferred("remove_child", $DamageArea)
 			$DestroyParticles.emitting = true
-		body.end_game()
+			body.end_game()
